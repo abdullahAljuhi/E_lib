@@ -1,0 +1,16 @@
+/* @keyframes changebackgraound {
+    0%{
+        content: url("front/images/slide/slid1.jpg");
+    }
+    50%{
+        content: url("front/images/slide/slid2.jpg");
+    }
+    100%{
+        content: url("front/images/slide/slid3.jpg");
+    }
+} */
+/* let imgs=["./images/home1.jpg","./images/home2.jpg","./images/home3.jpg","./images/home4.jpg"]
+setInterval(function(){
+    n=Math.floor(Math.random()*3);
+    bq.style.backgroundImage = "url('"+imgs[n]+"')";
+},2000); */
