@@ -25,7 +25,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title> Vertical Layouts - Forms | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title> Add city</title>
     
     <meta name="description" content="Most Powerful &amp; Comprehensive Bootstrap 5 HTML Admin Dashboard Template built for developers!" />
     <meta name="keywords" content="dashboard, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5">
@@ -99,7 +99,7 @@
   
       <!-- Menu -->
 
-      <?php include("aside.php");?>
+<?php require_once __DIR__.'../../aside.php'?>
       <!-- / Menu -->
 
 
@@ -577,28 +577,23 @@
           <div class="container-xxl flex-grow-1 container-p-y">
             
             
-<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms/</span> Vertical Layouts</h4>
+<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span>المدن</h4>
 
 
 
 
 <!-- Multi Column with Form Separator -->
 <div class="card mb-4">
-  <h5 class="card-header">انشاء قسم جديد</h5>
-  <form class="card-body" action="/save_category" method="POST" enctype="multipart/form-data">
+  <h5 class="card-header">اضافة مدينة جديدة</h5>
+  <form class="card-body" action="/save_city" method="POST" >
     
     <div class="row g-3">
       <div class="col-md-6">
-        <label class="form-label" for="multicol-username">اسم القسم</label>
-        <input name="category_name" type="text" id="multicol-username" class="form-control" placeholder="john.doe" />
+        <label class="form-label" for="multicol-username"> اسم المدينة </label>
+        <input name="name" type="text" id="multicol-username" class="form-control" placeholder="john.doe" />
       </div>
-      <div class="col-md-6">
-        <label class="form-label" for="multicol-email">صورة القسم</label>
-        <div class="input-group input-group-merge">
-          <input  name="image" type="file"  class="form-control"  aria-describedby="multicol-email2" />
-          
-        </div>
-      </div>
+      
+    
       
       <div class="col-md-6">
         <div class="form-password-toggle">
@@ -643,7 +638,6 @@
       © <script>
       document.write(new Date().getFullYear())
       </script>
-      , made with ❤️ by <a href="https://themeselection.com/" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
     </div>
     <div>
       
@@ -681,9 +675,7 @@
   <!-- / Layout wrapper -->
 
   
-  <div class="buy-now">
-    <a href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/" target="_blank" class="btn btn-danger btn-buy-now">Buy Now</a>
-  </div>
+  
   
 
   

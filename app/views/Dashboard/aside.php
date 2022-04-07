@@ -41,7 +41,7 @@
       </svg>
 
     </span>
-    <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
+    <span class="app-brand-text demo menu-text fw-bolder ms-2">E-Library</span>
   </a>
 
   <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
@@ -63,6 +63,9 @@
   <!-- Forms & Tables -->
   <li class="menu-header small text-uppercase"><span class="menu-header-text">ادارة المستخدمين</span></li>
 
+  
+  <!-- المستخدمين -->
+
   <li class="menu-item">
   <a href="/new_user" class="menu-link">
     <div>انشاء مستخدم</div>
@@ -76,19 +79,19 @@
  
 
 
-  <!-- Misc -->
+  <!-- الاقسام -->
   <li class="menu-header small text-uppercase"><span class="menu-header-text">ادارة الاقسام والتصنيفات</span></li>
   <li class="menu-item">
-  <a href="/add_category" class="menu-link">
+  <a href="/new_category" class="menu-link">
     <div>انشاء قسم</div>
   </a>
 </li>
 <li class="menu-item">
-  <a href="/categories" class="menu-link">
+  <a href="/list_category" class="menu-link">
     <div>عرض الاقسام</div>
   </a>
 </li>
-  <!-- Misc -->
+  <!-- الطلبات -->
   <li class="menu-header small text-uppercase"><span class="menu-header-text">ادارة الطلبات</span></li>
   <li class="menu-item">
   <a href="#" class="menu-link">
@@ -111,16 +114,30 @@
     <div>طلبات ملغية</div>
   </a>
 </li>
-  <!-- Misc -->
-  <li class="menu-header small text-uppercase"><span class="menu-header-text">ادارة الكتب/span></li>
+
+
+  <!-- الكتب -->
+  <li class="menu-header small text-uppercase"><span class="menu-header-text">ادارة الكتب</span></li>
   <li class="menu-item">
-  <a href="#" class="menu-link">
+  <a href="/new_book" class="menu-link">
     <div>اضافة كتاب</div>
   </a>
 </li>
 <li class="menu-item">
-  <a href="#" class="menu-link">
+  <a href="list_book" class="menu-link">
     <div>عرض الكتب</div>
+  </a>
+</li>
+<!--العروض-->
+<li class="menu-header small text-uppercase"><span class="menu-header-text">ادارة العروض</span></li>
+  <li class="menu-item">
+  <a href="/new_offer" class="menu-link">
+    <div>اضافة عروض</div>
+  </a>
+</li>
+<li class="menu-item">
+  <a href="list_offer" class="menu-link">
+    <div>عرض عروض</div>
   </a>
 </li>
    <!-- Misc -->
@@ -140,12 +157,12 @@
    <!-- Misc -->
    <li class="menu-header small text-uppercase"><span class="menu-header-text">ادارة  الدفع</span></li>
    <li class="menu-item">
-  <a href="#" class="menu-link">
+  <a href="new_payment" class="menu-link">
     <div>اضافة طريقة </div>
   </a>
 </li>
 <li class="menu-item">
-  <a href="#" class="menu-link">
+  <a href="/list_Payment" class="menu-link">
     <div>عرض الطرق</div>
   </a>
 </li>

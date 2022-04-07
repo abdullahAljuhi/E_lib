@@ -16,12 +16,12 @@
 <html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed " dir="ltr" data-theme="theme-semi-dark" data-assets-path="../../assets/" data-template="vertical-menu-template-semi-dark">
 
   
-<!-- ui-alerts.html , Sat, 26 Mar 2022 16:52:24 GMT -->
+<!-- form-layouts-vertical.html , Sat, 26 Mar 2022 16:53:12 GMT -->
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Alerts - UI elements | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title> Publishers</title>
     
     <meta name="description" content="Most Powerful &amp; Comprehensive Bootstrap 5 HTML Admin Dashboard Template built for developers!" />
     <meta name="keywords" content="dashboard, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5">
@@ -49,7 +49,8 @@
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
     <link rel="stylesheet" href="../../assets/vendor/libs/typeahead-js/typeahead.css" />
-    
+    <link rel="stylesheet" href="../../assets/vendor/libs/flatpickr/flatpickr.css" />
+<link rel="stylesheet" href="../../assets/vendor/libs/select2/select2.css" />
 
     <!-- Page CSS -->
     
@@ -642,7 +643,7 @@
       </ul>
     </li>
     <!-- User interface -->
-    <li class="menu-item active open">
+    <li class="menu-item">
       <a href="javascript:void(0)" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-box"></i>
         <div data-i18n="User interface">User interface</div>
@@ -653,7 +654,7 @@
             <div data-i18n="Accordion">Accordion</div>
           </a>
         </li>
-        <li class="menu-item active">
+        <li class="menu-item">
           <a href="ui-alerts.html" class="menu-link">
             <div data-i18n="Alerts">Alerts</div>
           </a>
@@ -909,13 +910,13 @@
         </li>
       </ul>
     </li>
-    <li class="menu-item">
+    <li class="menu-item active open">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-detail"></i>
         <div data-i18n="Form Layouts">Form Layouts</div>
       </a>
       <ul class="menu-sub">
-        <li class="menu-item">
+        <li class="menu-item active">
           <a href="form-layouts-vertical.html" class="menu-link">
             <div data-i18n="Vertical Form">Vertical Form</div>
           </a>
@@ -1513,15 +1514,94 @@
           <div class="container-xxl flex-grow-1 container-p-y">
             
             
-<h4 class="fw-bold py-3 mb-4">
-  <span class="text-muted fw-light">UI elements /</span> Alerts
-</h4>
+<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span>Publisher Form</h4>
 
-  <!-- Dismissible Alerts -->
-  <div class="col-md-12">
-    <div class="card">
-      <h5 class="card-header">Dismissible Alerts</h5>
+<!-- Basic Layout -->
+
+  <div class="col-xl">
+    <div class="card mb-4">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">Add New Publisher</h5>
+        <small class="text-muted float-end">Merged input group</small>
+      </div>
       <div class="card-body">
+        <form action="/save_publisher" method="POST" >
+          <div class="mb-3">
+            <label class="form-label" for="basic-icon-default-fullname">publisher Name </label>
+            <div class="input-group input-group-merge">
+              <span id="basic-icon-default-fullname2" class="input-group-text"><i class="bx bx-user"></i></span>
+              <input type="text" name="name" class="form-control" id="basic-icon-default-fullname" placeholder="John Doe" aria-label="John Doe" aria-describedby="basic-icon-default-fullname2" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="basic-icon-default-company">address</label>
+            <div class="input-group input-group-merge">
+              <span id="basic-icon-default-company2" class="input-group-text"><i class="bx bx-buildings"></i></span>
+              <input type="text" name="address" id="basic-icon-default-company" class="form-control" placeholder="ACME Inc." aria-label="ACME Inc." aria-describedby="basic-icon-default-company2" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="basic-icon-default-email">Email</label>
+            <div class="input-group input-group-merge">
+              <span class="input-group-text"><i class="bx bx-envelope"></i></span>
+              <input type="text" name="email"id="basic-icon-default-email" class="form-control" placeholder="john.doe" aria-label="john.doe" aria-describedby="basic-icon-default-email2" />
+              <span id="basic-icon-default-email2" class="input-group-text">@example.com</span>
+            </div>
+            <div class="form-text"> You can use letters, numbers & periods </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="basic-icon-default-company">country</label>
+            <div class="input-group input-group-merge">
+              <span id="basic-icon-default-company2" class="input-group-text"><i class="bx bx-buildings"></i></span>
+              <input type="text" name="country" id="basic-icon-default-company" class="form-control" placeholder="ACME Inc." aria-label="ACME Inc." aria-describedby="basic-icon-default-company2" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="basic-icon-default-phone">Phone No</label>
+            <div class="input-group input-group-merge">
+              <span id="basic-icon-default-phone2" class="input-group-text"><i class="bx bx-phone"></i></span>
+              <input type="text" name="phone" id="basic-icon-default-phone" class="form-control phone-mask" placeholder="658 799 8941" aria-label="658 799 8941" aria-describedby="basic-icon-default-phone2" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="basic-icon-default-phone">altrnative phone</label>
+            <div class="input-group input-group-merge">
+              <span id="basic-icon-default-phone2" class="input-group-text"><i class="bx bx-phone"></i></span>
+              <input type="text" name="alt_phone" id="basic-icon-default-phone" class="form-control phone-mask" placeholder="658 799 8941" aria-label="658 799 8941" aria-describedby="basic-icon-default-phone2" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="basic-icon-default-phone">fax</label>
+            <div class="input-group input-group-merge">
+              <span id="basic-icon-default-phone2" class="input-group-text"><i class="bx bx-phone"></i></span>
+              <input type="text" name="fax" id="basic-icon-default-phone" class="form-control phone-mask" placeholder="658 799 8941" aria-label="658 799 8941" aria-describedby="basic-icon-default-phone2" />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label" for="basic-icon-default-phone">image</label>
+            <div class="input-group input-group-merge">
+              <span id="basic-icon-default-phone2" class="input-group-text"></span>
+              <input type="file" name="image" id="basic-icon-default-phone" class="form-control phone-mask" placeholder="658 799 8941" aria-label="658 799 8941" aria-describedby="basic-icon-default-phone2" />
+            </div>
+          </div>
+          <label class="switch mb-3">
+              <input name="is_active" value=1 type="checkbox" checked class="switch-input" />
+              <span class="switch-toggle-slider">
+                <span class="switch-on"></span>
+                <span class="switch-off"></span>
+              </span>
+              <span class="switch-label">is active</span>
+            </label>
+            <br>
+
+         
+          <button type="submit" class="btn btn-primary">save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
       <?php  if(isset($params)) {
           
           foreach ($params as $key => $value){
@@ -1536,17 +1616,9 @@
 
       
       </div>
-    </div>
-  </div>
-  <!--/ Dismissible Alerts -->
 </div>
 
 
-            
-          </div>
-          <!-- / Content -->
-
-          
           
 
 <!-- Footer -->
@@ -1556,7 +1628,6 @@
       © <script>
       document.write(new Date().getFullYear())
       </script>
-      , made with ❤️ by <a href="https://themeselection.com/" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
     </div>
     <div>
       
@@ -1616,18 +1687,20 @@
   <!-- endbuild -->
 
   <!-- Vendors JS -->
-  
-  
+  <script src="../../assets/vendor/libs/cleavejs/cleave.js"></script>
+<script src="../../assets/vendor/libs/cleavejs/cleave-phone.js"></script>
+<script src="../../assets/vendor/libs/moment/moment.js"></script>
+<script src="../../assets/vendor/libs/flatpickr/flatpickr.js"></script>
+<script src="../../assets/vendor/libs/select2/select2.js"></script>
 
   <!-- Main JS -->
   <script src="../../assets/js/main.js"></script>
 
   <!-- Page JS -->
-  
-  
+  <script src="../../assets/js/form-layouts.js"></script>
   
 </body>
 
 
-<!-- ui-alerts.html , Sat, 26 Mar 2022 16:52:24 GMT -->
+<!-- form-layouts-vertical.html , Sat, 26 Mar 2022 16:53:13 GMT -->
 </html>

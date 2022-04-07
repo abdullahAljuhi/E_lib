@@ -38,11 +38,12 @@ class Router{
        
         $route=$this->request->getRoute();
         $method=$this->request->getRequestMethod();
-        $callback=self::$routes[$method][$route];
+        echo  $route.'<br>';
+        echo  $method;
 
-        
-        
-        
+        $callback=self::$routes[$method][$route];
+        print_r($callback);
+
             if(isset($callback))
             {
                 if(is_array($callback))

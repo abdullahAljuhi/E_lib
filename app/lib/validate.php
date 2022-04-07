@@ -1,6 +1,5 @@
 <?php
-namespace PHPMVC\Lib;
-
+namespace coding\app\lib;
 trait Validate
 {
 
@@ -14,6 +13,19 @@ trait Validate
         'email'         => '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
         'url'           => '/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
     ];
+    private $m = [
+    'req'  => 'this field should have a value',
+    'num'  => 'this field should be number',
+    'int'  => 'this field must be an integer number',
+    'float' => ' this field must be a decimal number',
+   'alpha' => 'this field must have alphabet characters only',
+   'alphanum' => 'this field must have alphabet character or number only',
+   'eq_field' => 'this field must be the same value as ',
+   'vdate' => 'this field must be a date of YYYY-mm-dd format',
+   'email' => 'this field must be a valid email address ex: someone@mail.com',
+   'url' => 'this field must be a valid url ex: http://www.abc.com'
+    ];
+    
 
     public function req ($value)
     {
@@ -137,11 +149,11 @@ trait Validate
                         continue;
                     if(preg_match_all('/(min)\((\d+)\)/', $validationRole, $m)) {
                         if($this->min($value, $m[2][0]) === false) {
-                            $errors[$fieldName] = true;
+                            $errors[$fieldName] = 'this less than '.$m[2][0];
                         }
                     } elseif (preg_match_all('/(max)\((\d+)\)/', $validationRole, $m)) {
                         if($this->max($value, $m[2][0]) === false) {
-                            $errors[$fieldName] = true;
+                            $errors[$fieldName] = 'this more than '.$m[2][0];
                         }
                     } elseif(preg_match_all('/(lt)\((\d+)\)/', $validationRole, $m)) {
                         if($this->lt($value, $m[2][0]) === false) {
@@ -170,13 +182,13 @@ trait Validate
                         }
                     } else {
                         if($this->$validationRole($value) === false) {
-                            $errors[$fieldName] = true;
+                            $errors[$fieldName] = strval($this->m['req']);
                         }
                     }
                 }
             }
         }
-        return empty($errors) ? true : false;
+        return empty($errors) ? false : $errors;
     }
 
 }

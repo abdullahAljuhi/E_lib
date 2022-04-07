@@ -2,11 +2,10 @@
 
 namespace coding\app\models;
 
-class Author extends Model{
+class Book extends Model{
     function __construct()
     {
-
-        parent::$tblName="authors";
+        parent::$tblName="books";
     }
 
     function __set($name, $value)

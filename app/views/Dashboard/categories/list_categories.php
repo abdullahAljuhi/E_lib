@@ -97,7 +97,7 @@
 
       <!-- Menu -->
 
-      <?php include("aside.php");?>
+<?php require_once __DIR__.'../../aside.php'?>
       <!-- / Menu -->
 
 
@@ -605,7 +605,7 @@
             
             <td><?= $category['name'];?></td>
             <td>
-              <img class="img-fluid rounded" height="150px" width="150px" src="images/<?= $category['image'];?>">
+              <img class="img-fluid rounded" height="150px" width="150px" src="uploads/images/<?= $category['image'];?>">
             </td>
             <td>
             <?php if($category['is_active']==1) {?>    
@@ -616,7 +616,8 @@
             <?php } ?>
             </td>
             <td>
-            <a href="/edit_category/<?php echo $category['id'];?>" class="btn btn-icon btn-outline-dribbble">
+            <a href="/edit_category<?php echo $category['id'];?>" 
+            class="btn btn-icon btn-outline-dribbble">
                 <i class="tf-icons bx bx-edit-alt me-1"></i>
               </a>
               <button type="button" class="btn btn-icon btn-outline-dribbble">

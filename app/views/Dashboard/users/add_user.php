@@ -96,8 +96,8 @@
 
 
       <!-- Menu -->
-
-    <?php require_once __DIR__.'/aside.php'; ?>
+      <?php require_once __DIR__ . '../../aside.php' ?>
+      <!-- Layouts -->
       <!-- / Menu -->
 
 
@@ -239,7 +239,8 @@
                         <span class="dropdown-shortcuts-icon bg-label-secondary rounded-circle mb-2">
                           <i class="bx bx-check-shield fs-4"></i>
                         </span>
-                        <a href="app-access-roles.html" class="stretched-link">Role Management</a>
+                        <a href="app-access-roles.html" class="stretched-link">Role
+                          Management</a>
                         <small class="text-muted mb-0">Permission</small>
                       </div>
                     </div>
@@ -264,7 +265,8 @@
                         <span class="dropdown-shortcuts-icon bg-label-secondary rounded-circle mb-2">
                           <i class="bx bx-help-circle fs-4"></i>
                         </span>
-                        <a href="pages-help-center-landing.html" class="stretched-link">Help Center</a>
+                        <a href="pages-help-center-landing.html" class="stretched-link">Help
+                          Center</a>
                         <small class="text-muted mb-0">FAQs & Articles</small>
                       </div>
                       <div class="dropdown-shortcuts-item col">
@@ -376,7 +378,8 @@
                           </div>
                           <div class="flex-grow-1">
                             <h6 class="mb-1">Application has been approved 🚀 </h6>
-                            <p class="mb-0">Your ABC project application has been approved.</p>
+                            <p class="mb-0">Your ABC project application has been approved.
+                            </p>
                             <small class="text-muted">2 days ago</small>
                           </div>
                           <div class="flex-shrink-0 dropdown-notifications-actions">
@@ -448,7 +451,8 @@
                           </div>
                           <div class="flex-grow-1">
                             <h6 class="mb-1">CPU is running high</h6>
-                            <p class="mb-0">CPU Utilization Percent is currently at 88.63%,</p>
+                            <p class="mb-0">CPU Utilization Percent is currently at 88.63%,
+                            </p>
                             <small class="text-muted">5 days ago</small>
                           </div>
                           <div class="flex-shrink-0 dropdown-notifications-actions">
@@ -576,111 +580,99 @@
           <div class="container-xxl flex-grow-1 container-p-y">
 
 
-            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms/</span> Vertical Layouts</h4>
-
-           
+            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> User Form </h4>
 
 
+
+            <div class="card-body">
+              <?php if (isset($params['message']) && is_array($params)) {
+
+                foreach ($params['message'] as $key => $value) {
+              ?>
+                  <div class="alert alert-<?php echo $key; ?> alert-dismissible" role="alert">
+                    <?php echo $value; ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    </button>
+                  </div>
+              <?php }
+              }; 
+      ?>
+            </div>
             <!-- Multi Column with Form Separator -->
             <div class="card mb-4">
-              <h5 class="card-header">Multi Column with Form Separator</h5>
-              <form class="card-body">
-                <h6>1. Account Details</h6>
+              <h5 class="card-header">User Form </h5>
+              <form class="card-body" action="/save_user" method="POST">
+                <h6>Add New User</h6>
                 <div class="row g-3">
                   <div class="col-md-6">
-                    <label class="form-label" for="multicol-username">Username</label>
-                    <input type="text" id="multicol-username" class="form-control" placeholder="john.doe" />
+                    <label class="form-label" for="multicol-username">اسم المستخدم</label>
+                    <input name="name" type="text" id="multicol-username" class="form-control" placeholder="john.doe" />
+                    <?php if (isset($params['errors']['name']) && is_array($params)) {?>
+                      <div class="alert alert-danger alert-dismissible" role="alert">
+                    <?php echo $params['errors']['name']; ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    </button>
+                  </div>
+                <?php }?>
                   </div>
                   <div class="col-md-6">
-                    <label class="form-label" for="multicol-email">Email</label>
+                    <label class="form-label" for="multicol-email">الايميل</label>
                     <div class="input-group input-group-merge">
-                      <input type="text" id="multicol-email" class="form-control" placeholder="john.doe" aria-label="john.doe" aria-describedby="multicol-email2" />
+                      <input name="email" type="text" id="multicol-email" class="form-control" placeholder="john.doe" aria-label="john.doe" aria-describedby="multicol-email2" />
                       <span class="input-group-text" id="multicol-email2">@example.com</span>
                     </div>
+                    <?php if (isset($params['errors']['email']) && is_array($params)) {?>
+                      <div class="alert alert-danger alert-dismissible" role="alert">
+                    <?php echo $params['errors']['email']; ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    </button>
+                  </div>
+                <?php }
+                ?>
                   </div>
                   <div class="col-md-6">
                     <div class="form-password-toggle">
-                      <label class="form-label" for="multicol-password">Password</label>
+                      <label class="form-label" for="multicol-password">كلمة المرور</label>
                       <div class="input-group input-group-merge">
-                        <input type="password" id="multicol-password" class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="multicol-password2" />
+                        <input name="password" type="password" id="multicol-password" class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="multicol-password2" />
                         <span class="input-group-text cursor-pointer" id="multicol-password2"><i class="bx bx-hide"></i></span>
                       </div>
                     </div>
+                    <?php if (isset($params['errors']['password']) && is_array($params)) {?>
+                      <div class="alert alert-danger alert-dismissible" role="alert">
+                    <?php echo $params['errors']['password']; ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    </button>
+                  </div>
+                <?php }
+                ?>
                   </div>
                   <div class="col-md-6">
                     <div class="form-password-toggle">
-                      <label class="form-label" for="multicol-confirm-password">Confirm Password</label>
+                      <label class="form-label" for="multicol-confirm-password">حالة
+                        التفعيل</label>
                       <div class="input-group input-group-merge">
-                        <input type="password" id="multicol-confirm-password" class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="multicol-confirm-password2" />
-                        <span class="input-group-text cursor-pointer" id="multicol-confirm-password2"><i class="bx bx-hide"></i></span>
+                        <label class="switch">
+                          <input name="is_active" value=1 type="checkbox" checked class="switch-input" />
+                          <span class="switch-toggle-slider">
+                            <span class="switch-on"></span>
+                            <span class="switch-off"></span>
+                          </span>
+                          <span class="switch-label">مفعل</span>
+                        </label>
                       </div>
                     </div>
                   </div>
                 </div>
-                <hr class="my-4 mx-n4" />
-                <h6>2. Personal Info</h6>
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <label class="form-label" for="multicol-first-name">First Name</label>
-                    <input type="text" id="multicol-first-name" class="form-control" placeholder="John" />
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label" for="multicol-last-name">Last Name</label>
-                    <input type="text" id="multicol-last-name" class="form-control" placeholder="Doe" />
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label" for="multicol-country">Country</label>
-                    <select id="multicol-country" class="select2 form-select" data-allow-clear="true">
-                      <option value="">Select</option>
-                      <option value="Australia">Australia</option>
-                      <option value="Bangladesh">Bangladesh</option>
-                      <option value="Belarus">Belarus</option>
-                      <option value="Brazil">Brazil</option>
-                      <option value="Canada">Canada</option>
-                      <option value="China">China</option>
-                      <option value="France">France</option>
-                      <option value="Germany">Germany</option>
-                      <option value="India">India</option>
-                      <option value="Indonesia">Indonesia</option>
-                      <option value="Israel">Israel</option>
-                      <option value="Italy">Italy</option>
-                      <option value="Japan">Japan</option>
-                      <option value="Korea">Korea, Republic of</option>
-                      <option value="Mexico">Mexico</option>
-                      <option value="Philippines">Philippines</option>
-                      <option value="Russia">Russian Federation</option>
-                      <option value="South Africa">South Africa</option>
-                      <option value="Thailand">Thailand</option>
-                      <option value="Turkey">Turkey</option>
-                      <option value="Ukraine">Ukraine</option>
-                      <option value="United Arab Emirates">United Arab Emirates</option>
-                      <option value="United Kingdom">United Kingdom</option>
-                      <option value="United States">United States</option>
-                    </select>
-                  </div>
-                  <div class="col-md-6 select2-primary">
-                    <label class="form-label" for="multicol-language">Language</label>
-                    <select id="multicol-language" class="select2 form-select" multiple>
-                      <option value="en" selected>English</option>
-                      <option value="fr" selected>French</option>
-                      <option value="de">German</option>
-                      <option value="pt">Portuguese</option>
-                    </select>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label" for="multicol-birthdate">Birth Date</label>
-                    <input type="text" id="multicol-birthdate" class="form-control dob-picker" placeholder="YYYY-MM-DD" />
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label" for="multicol-phone">Phone No</label>
-                    <input type="text" id="multicol-phone" class="form-control phone-mask" placeholder="658 799 8941" aria-label="658 799 8941" />
-                  </div>
-                </div>
+
+
                 <div class="pt-4">
-                  <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
-                  <button type="reset" class="btn btn-label-secondary">Cancel</button>
+                  <button type="submit" class="btn btn-primary me-sm-3 me-1">Save</button>
+
                 </div>
+
               </form>
+
             </div>
           </div>
           <!-- / Content -->
@@ -695,12 +687,12 @@
                 © <script>
                   document.write(new Date().getFullYear())
                 </script>
-                , made with ❤️ by <a href="https://themeselection.com/" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
               </div>
               <div>
 
                 <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
+                <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More
+                  Themes</a>
 
                 <a href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/" target="_blank" class="footer-link me-4">Documentation</a>
 
@@ -733,9 +725,6 @@
   <!-- / Layout wrapper -->
 
 
-  <div class="buy-now">
-    <a href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/" target="_blank" class="btn btn-danger btn-buy-now">Buy Now</a>
-  </div>
 
 
 

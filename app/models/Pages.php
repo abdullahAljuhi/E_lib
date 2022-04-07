@@ -1,5 +1,5 @@
 <?php
-namespace App\Controllers;
+namespace coding\app\models;
 use \Core\View;
 /**
  * Posts controller

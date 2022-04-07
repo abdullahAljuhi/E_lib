@@ -1,12 +1,12 @@
 <?php
-
 namespace coding\app\models;
 
-class Author extends Model{
+class UserProfile extends Model{
+   
     function __construct()
     {
-
-        parent::$tblName="authors";
+        parent::$tblName="user_profiles";
+        
     }
 
     function __set($name, $value)
@@ -15,4 +15,3 @@ class Author extends Model{
         
     }
 }
-?>

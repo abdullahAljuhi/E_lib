@@ -3,10 +3,9 @@ namespace coding\app\models;
 use coding\app\system\AppSystem;
 class Model{
     public static  $tblName;
-   
+    
     function save():bool{
         
-      
         $values=array();
         $columns=array();
         //get_object_
@@ -27,6 +26,7 @@ class Model{
         if($stmt->execute())
         return true;
         return false;
+       
     }
 
     public function getAll(){
@@ -36,5 +36,28 @@ class Model{
         return $stmt->fetchAll();
 
     }
+
+    public function getSingleRow($id){
+        $sql_query="select * from ".self::$tblName." where id=".$id."";
+       
+       //echo $sql_query;
+         $stmt=AppSystem::$appSystem->database->pdo->prepare($sql_query);
+        $stmt->execute();
+        return $stmt->fetchObject();
+        
+
+    }
+    public function getId($email){
+        $sql_query="select id from ".self::$tblName." where email='".$email."'";
+       
+       //echo $sql_query;
+         $stmt = AppSystem::$appSystem->database->pdo->prepare($sql_query);
+        $stmt->execute();
+        return $stmt->fetchObject();
+        
+
+    }
+ 
+    
 }
 ?>
